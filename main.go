@@ -26,8 +26,8 @@ import (
 
 func main() {
 	http.HandleFunc("/blue", blueHandler)
-	http.ListenAndServe(":8080", nil)
 	http.HandleFunc("/red", redHandler)
+	http.ListenAndServe(":8080", nil)
 }
 
 func blueHandler(w http.ResponseWriter, r *http.Request) {
@@ -36,10 +36,6 @@ func blueHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "image/png")
 	png.Encode(w, img)
 }
-
-
-
-
 
 
 func redHandler(w http.ResponseWriter, r *http.Request) {
